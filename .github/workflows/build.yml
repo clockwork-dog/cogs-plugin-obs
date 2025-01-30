@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -21,7 +21,7 @@ jobs:
       - run: yarn build
       - working-directory: build
         run: zip -r dog.clockwork.obs.zip dog.clockwork.obs
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         with:
           name: dog.clockwork.obs.zip
           path: build/dog.clockwork.obs.zip
